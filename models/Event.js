@@ -3,8 +3,8 @@ module.exports = function(sequilize , Datatypes) {
         name : Datatypes.STRING,
         location : Datatypes.STRING,
         date : Datatypes.DATE,
-        creator : Datatypes.INTEGER,
-        interested : Datatypes.STRING,
+        creator_id : Datatypes.INTEGER,
+        interested : Datatypes.ARRAY(Datatypes.ENUM),
         category : Datatypes.STRING
     });
 
