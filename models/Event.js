@@ -4,7 +4,8 @@ module.exports = function(sequilize , Datatypes) {
         location : Datatypes.STRING,
         date : Datatypes.DATE,
         creator : Datatypes.INTEGER,
-        interested : Datatypes.STRING
+        interested : Datatypes.STRING,
+        category : Datatypes.STRING
     });
 
     return event;
