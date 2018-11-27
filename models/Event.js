@@ -4,7 +4,7 @@ module.exports = function(sequilize , Datatypes) {
         location : Datatypes.STRING,
         date : Datatypes.DATE,
         creator_id : Datatypes.INTEGER,
-        interested : Datatypes.STRING,
+        interested : Datatypes.INTEGER,
         category : Datatypes.STRING
     });
 
