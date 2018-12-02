@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Events</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS link -->
@@ -25,10 +25,34 @@
                 </nav>
             </div>
         </div>
-        <!-- Main Page Row -->
+        <!-- Events Row Row -->
         <div class="container-fluid">
-            <div class="eventsList"></div>
+            <div class="row">
+                <div class="offset-md-4 col-md-4 log-form">
+                    <h2>Search Events</h2>
+                    <form>
+                        <input type="text" title="searchevent" placeholder="event name" id="searchEventName" />
+                        <br>
+                        <input type="text" title="searchevent" placeholder="location" id="searchLocation" />
+                        <br>
+                        <input type="datetime" title="searchevent" placeholder="date/time" id="searchTime" />
+                        <br>
+                        <input type="radio" name="category" value="Magic: The Gathering">Magic: The Gathering<br>
+                        <input type="radio" name="category" value="Warhammer 40k">Warhammer 40k<br>
+                        <input type="radio" name="category" value="Warhammer Fantasy">Warhammer Fantasy<br>
+                        <input type="radio" name="category" value="Star Wars">Star Wars<br>
+                        <input type="radio" name="category" value="War Machine">War Machine<br>
+                        <input type="radio" name="category" value="Dungeons & Dragons">Dungeons & Dragons<br>
+                        <input type="radio" name="category" value="Pathfinder">Pathfinder<br>
+                        <button type="submit" class="btn" id="searchEvent">Search Events</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="eventsList">
+                </div>
+            </div>
         </div>
-    <script src=""></script>
+    <script src="./assets/js/geekn.js"></script>
     </body>
 </html>
