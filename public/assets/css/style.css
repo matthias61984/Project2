@@ -109,3 +109,6 @@ body {
   bottom: -4px;
     background-image: -webkit-linear-gradient(right, transparent 0%, rgba(0,0,0,.4) 100%);
 }
+#main {
+  padding-top: 50px;
+}
