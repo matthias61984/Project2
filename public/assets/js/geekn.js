@@ -16,7 +16,6 @@ $(document).ready(function() {
         var newUser = {
             userName: $("#newUserName").val().trim(),
             userPass: $("#newPassword").val().trim(),
-            repeatPass: $("#newRepeatPassword").val().trim(),
             userEmail: $("#newEmail").val().trim()
         };
         console.log(newUser);
@@ -26,7 +25,7 @@ $(document).ready(function() {
         $("#newEmail").val("");
         $.ajax({
             method: "POST",
-            url: "/api/users",
+            url: "/api/user",
             data: newUser
         })
     })
@@ -61,7 +60,11 @@ $(document).ready(function() {
           description: $("#addDescription").val().trim(),
         };
         console.log(newEvent);
-        $.post("/api/events", newEvent)
+        $.ajax({
+            method : "POST",
+            url : "/api/events",
+            data : newEvent
+        })
           .then(function() {
             var row = $("<div>");
             row.addClass("event");
