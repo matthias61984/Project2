@@ -24,6 +24,11 @@ $(document).ready(function() {
         $("#newPassword").val("");
         $("#newRepeatPassword").val("");
         $("#newEmail").val("");
+        $.ajax({
+            method: "POST",
+            url: "/api/users",
+            data: newUser
+        })
     })
     /* Search Event Function */
     $("#searchEvent").on("click", function(event) {
@@ -39,5 +44,38 @@ $(document).ready(function() {
         $("#searchLocation").val("");
         $("#searchTime").val("");
         $('input[name=category]').attr('checked', false);
+        $.ajax({
+            method: "READ",
+            url: "/api/events",
+            data: searchEvent
+        }) 
+    });
+    /* Create Event Function */
+    $("#createEvent").on("click", function(event) {
+        event.preventDefault();
+        var newEvent = {
+          name: $("#addEventName").val().trim(),
+          location: $("#addLocation").val().trim(),
+          time: $("#addTime").val().trim(),
+          category: $(':radio[name=category]:checked').val(),
+          description: $("#addDescription").val().trim(),
+        };
+        console.log(newEvent);
+        $.post("/api/events", newEvent)
+          .then(function() {
+            var row = $("<div>");
+            row.addClass("event");
+            row.append("<p>" + newEvent.name + "</p>");
+            row.append("<p>" + newEvent.location + "</p>");
+            row.append("<p>" + newEvent.time + "</p>");
+            row.append("<p>" + newEvent.category + "</p>");
+            row.append("<p>" + newEvent.description + "</p>");
+            $("#eventsList").prepend(row);
+          });
+        $("#addEventName").val("");
+        $("#addLocation").val("");
+        $("#addTime").val("");
+        $('input[name=category]').attr('checked', false);
+        $("#addDescription").val("");
     });
 });
