@@ -7,13 +7,25 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname , "../public/index.html"));
     });
 
-    app.post("/" , passport.authenticate("local" , {
-        successRedirect : "/events/" + user.id,
-        failureRedirect : "/userCreation",
+    app.post("/login" , passport.authenticate("local" , {
+        successRedirect : "/events",
+        failureRedirect : "/createuser",
         failureFlash : true
     }));
 
-    app.get("/userCreation", function(req , res) {
+    app.get("/createuser", function(req , res) {
         res.sendFile(path.join(__dirname , "../public/userCreation.html"));
+    });
+
+    app.get("/addevent" , function(req, res) {
+        res.sendFile(path.join(__dirname , "../public/addevent.html"));
+    });
+
+    app.get("/forgot" , function(req , res) {
+        res.sendFile(path.join(__dirname , "../public/forgot.html"));
+    });
+
+    app.get("/events" , function(req , res) {
+        res.sendFile(path.join(__dirname , "../public/events.html"));
     });
 }
