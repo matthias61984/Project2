@@ -1,5 +1,5 @@
-module.exports = function(sequilize , Datatypes) {
-    var event = sequilize.define("event" , {
+module.exports = function(sequelize , Datatypes) {
+    var event = sequelize.define("event" , {
         name : Datatypes.STRING,
         location : Datatypes.STRING,
         date : Datatypes.DATE,
