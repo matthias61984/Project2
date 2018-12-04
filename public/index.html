@@ -31,10 +31,10 @@
         <div class="container-fluid">
             <div class="offset-md-4 col-md-4 log-form" id="main">
                 <h2>Login to your account</h2>
-                <form>
-                    <input type="text" title="username" placeholder="username" id="userName" />
-                    <input type="password" title="username" placeholder="password" id="password" />
-                    <button type="submit" class="btn" id="login">Login</button>
+                <form action="/login" method="post">
+                    <input type="text" name="username" placeholder="username" id="userName" />
+                    <input type="password" name="password" placeholder="password" id="password" />
+                    <input type="submit" value="Log In"/>
                     <br>
                     <a class="forgot" href="./forgot.html">Forgot username or password?</a>
                     <br>

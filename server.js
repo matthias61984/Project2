@@ -1,4 +1,7 @@
 var express = require("express");
+var session = require("express-session");
+
+var passport = require("passport");
 
 var app = express();
 
@@ -8,8 +11,11 @@ var db = require("./models");
 
 app.use(express.urlencoded( { extended : true}));
 app.use(express.json());
-
+app.use(session({ secret: "pikachu" }));
 app.use(express.static("public"));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);

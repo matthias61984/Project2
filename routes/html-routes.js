@@ -10,7 +10,6 @@ module.exports = function(app) {
     app.post("/login" , passport.authenticate("local" , {
         successRedirect : "/events",
         failureRedirect : "/createuser",
-        //failureFlash : true
     }));
 
     app.get("/createuser", function(req , res) {
