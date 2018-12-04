@@ -56,7 +56,7 @@ module.exports = function(app) {
         });
     });
 
-    app.update("/api/users/" , function(req , res) {
+    app.put("/api/users/" , function(req , res) {
         db.User.update({
             username : req.body.username,
             password : req.body.password
@@ -69,7 +69,7 @@ module.exports = function(app) {
         });
     });
 
-    app.update("/api/events" , function(req , res) {
+    app.put("/api/events" , function(req , res) {
         db.Event.update({
             name : req.body.name,
             location : req.body.location,
@@ -81,8 +81,8 @@ module.exports = function(app) {
             where : {
                 id : req.body.id
             }
+        }).then(function(dbUser) {
+            res.json(dbUser);
         });
-    }).then(function(dbEvent) {
-        res.json(dbEvent);
     });
 }
