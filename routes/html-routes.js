@@ -10,11 +10,11 @@ module.exports = function(app) {
     app.post("/login" , passport.authenticate("local" , {
         successRedirect : "/events",
         failureRedirect : "/createuser",
-        failureFlash : true
+        //failureFlash : true
     }));
 
     app.get("/createuser", function(req , res) {
-        res.sendFile(path.join(__dirname , "../public/userCreation.html"));
+        res.sendFile(path.join(__dirname , "../public/createuser.html"));
     });
 
     app.get("/addevent" , function(req, res) {

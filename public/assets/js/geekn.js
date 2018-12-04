@@ -11,7 +11,7 @@ $(document).ready(function() {
         $("#password").val("");
         $.ajax({
             method: "POST",
-            url: "/",
+            url: "/login",
             data: loginInfo
         })
     });
