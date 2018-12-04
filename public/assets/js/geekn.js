@@ -9,11 +9,6 @@ $(document).ready(function() {
         console.log(loginInfo);
         $("#userName").val("");
         $("#password").val("");
-        $.ajax({
-            method: "POST",
-            url: "/login",
-            data: loginInfo
-        })
     });
     /* Create Account Function */
     $("#createUser").on("click", function(event) {
