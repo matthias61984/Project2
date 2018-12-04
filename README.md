@@ -18,3 +18,4 @@ HTML, CSS, Jquery, Node.js, Express, Mysql, JawsDB, and passport.js
 ## Acknowledgments
 
 * The Rubber Ducky
+* Header design by Johan van Tongeren via Codepen
