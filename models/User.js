@@ -1,5 +1,5 @@
-module.exports = function(sequilize , Datatypes ) {
-    var User = sequilize.define("user" , {
+module.exports = function(sequelize , Datatypes ) {
+    var User = sequelize.define("user" , {
         username : Datatypes.STRING,
         password : Datatypes.STRING,
     });
