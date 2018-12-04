@@ -2,24 +2,24 @@ $(document).ready(function() {
     /* Login Function */
     $("#login").on("click", function(event) {
         event.preventDefault();
-        var loginName = $("#userName").val().trim();
-        var loginPass = $("#password").val().trim();
-        console.log(loginName);
-        console.log(loginPass);
+        var loginInfo = {
+            loginName: $("#userName").val().trim(),
+            loginPass: $("#password").val().trim()
+        };
+        console.log(loginInfo);
         $("#userName").val("");
         $("#password").val("");
     });
     /* Create Account Function */
     $("#createUser").on("click", function(event) {
         event.preventDefault();
-        var newUserName = $("#newUserName").val().trim();
-        var newUserPass = $("#newPassword").val().trim();
-        var repeatPass = $("#newRepeatPassword").val().trim();
-        var newUserEmail = $("#newEmail").val().trim();
-        console.log(newUserName);
-        console.log(newUserPass);
-        console.log(repeatPass);
-        console.log(newUserEmail);
+        var newUser = {
+            userName: $("#newUserName").val().trim(),
+            userPass: $("#newPassword").val().trim(),
+            repeatPass: $("#newRepeatPassword").val().trim(),
+            userEmail: $("#newEmail").val().trim()
+        };
+        console.log(newUser);
         $("#newUserName").val("");
         $("#newPassword").val("");
         $("#newRepeatPassword").val("");
@@ -28,14 +28,13 @@ $(document).ready(function() {
     /* Search Event Function */
     $("#searchEvent").on("click", function(event) {
         event.preventDefault();
-        var searchEvent = $("#searchEventName").val().trim();
-        var searchLocation = $("#searchLocation").val().trim();
-        var searchEvent = $("#searchTime").val().trim();
-        var gameCategory = $(':radio[name=category]:checked').val();
+        var searchEvent = {
+            name: $("#searchEventName").val().trim(),
+            location: $("#searchLocation").val().trim(),
+            time: $("#searchTime").val().trim(),
+            category: $(':radio[name=category]:checked').val()
+        };
         console.log(searchEvent);
-        console.log(searchLocation);
-        console.log(searchTime);
-        console.log(gameCategory);
         $("#searchEventName").val("");
         $("#searchLocation").val("");
         $("#searchTime").val("");

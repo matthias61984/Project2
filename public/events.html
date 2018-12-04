@@ -23,6 +23,7 @@
                     <ul class="nav navbar-right" id="menu">
                         <li><a class="nav-link" href="./index.html">Home</a></li>
                         <li><a class="nav-link active" href="#">Events</a></li>
+                        <li><a class="nav-link" href="./addevent.html">Add Event</a></li>
                     </ul>
                 </nav>
             </div>
@@ -33,12 +34,16 @@
                 <div class="offset-md-4 col-md-4 log-form" id="main">
                     <h2>Search Events</h2>
                     <form>
-                        <input type="text" title="searchevent" placeholder="event name" id="searchEventName" />
+                        <strong>Event Name</strong><br>
+                        <input type="text" title="searchevent" placeholder="" id="searchEventName" />
                         <br>
-                        <input type="text" title="searchevent" placeholder="location" id="searchLocation" />
+                        <strong>Location (by address)</strong><br>
+                        <input type="text" title="searchevent" placeholder="" id="searchLocation" />
                         <br>
-                        <input type="datetime" title="searchevent" placeholder="date/time" id="searchTime" />
+                        <strong>Event Time</strong><br>
+                        <input type="datetime-local" title="searchevent" id="searchTime" />
                         <br>
+                        <strong>Game</strong><br>
                         <input type="radio" name="category" value="Magic: The Gathering">Magic: The Gathering<br>
                         <input type="radio" name="category" value="Warhammer 40k">Warhammer 40k<br>
                         <input type="radio" name="category" value="Warhammer Fantasy">Warhammer Fantasy<br>
