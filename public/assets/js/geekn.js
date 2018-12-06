@@ -47,7 +47,7 @@ $(document).ready(function() {
             method: "READ",
             url: "/api/events",
             data: searchEvent
-        }) 
+        })
     });
     /* Create Event Function */
     $("#createEvent").on("click", function(event) {

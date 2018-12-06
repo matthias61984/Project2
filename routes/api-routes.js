@@ -14,6 +14,17 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/eventSearch" , function(req , res) {
+        db.Event.findAll({where : {
+            name : req.body.name,
+            location : req.body.location,
+            date : req.body.time,
+            category : req.body.category        
+        }}).then(function(dbUser) {
+            res.json(dbUser);
+        })
+    })
+
     app.post("/api/user" , function(req , res) {
         db.User.create({
             username : req.body.userName,
@@ -29,10 +40,11 @@ module.exports = function(app) {
         db.Event.create({
             name : req.body.name,
             location : req.body.location,
-            date : req.body.date,
+            date : req.body.time,
             creator_id : req.body.creator_id,
-            interested : req.body.interested,
-            category : req.body.category
+            interested : 1,
+            category : req.body.category,
+            description : req.body.description
         }).then(function(dbEvents) {
             res.json(dbEvents);
         });

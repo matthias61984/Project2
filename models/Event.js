@@ -5,7 +5,8 @@ module.exports = function(sequelize , Datatypes) {
         date : Datatypes.DATE,
         creator_id : Datatypes.INTEGER,
         interested : Datatypes.INTEGER,
-        category : Datatypes.STRING
+        category : Datatypes.STRING,
+        description : Datatypes.STRING
     });
 
     event.sync();
