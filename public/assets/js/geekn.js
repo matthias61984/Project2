@@ -25,7 +25,7 @@ $(document).ready(function() {
         $("#newEmail").val("");
         $.ajax({
             method: "POST",
-            url: "/api/user",
+            url: "/api/users",
             data: newUser
         })
     })
